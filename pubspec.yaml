@@ -8,6 +8,7 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  get: 4.6.5
   carousel_slider: ^4.1.1
   flutter:
     sdk: flutter
