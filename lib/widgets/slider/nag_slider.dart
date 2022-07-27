@@ -13,26 +13,33 @@ class NAGImageSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height * 0.6;
     final List<Widget>? imageSliders = imgList
-        .map((item) => Container(
-              margin: const EdgeInsets.all(5.0),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                child: Image.network(item, fit: BoxFit.cover, width: 1000.0),
-              ),
-            ))
+        .map(
+          (item) => Center(
+            child: Image.network(
+              item,
+              fit: BoxFit.cover,
+              height: height,
+            ),
+          ),
+        )
         .toList();
     return Expanded(
-      child: CarouselSlider(
-        items: imageSliders,
-        carouselController: _controller,
-        options: CarouselOptions(
-            autoPlay: true,
-            enlargeCenterPage: true,
-            aspectRatio: 2.0,
-            onPageChanged: (index, reason) {
-              controller.current.value = index;
-            }),
+      child: Container(
+        color: NAGColors.nagGrey25,
+        child: CarouselSlider(
+          items: imageSliders,
+          carouselController: _controller,
+          options: CarouselOptions(
+              autoPlay: true,
+              height: height,
+              viewportFraction: 1.0,
+              enlargeCenterPage: false,
+              onPageChanged: (index, reason) {
+                controller.current.value = index;
+              }),
+        ),
       ),
     );
   }
