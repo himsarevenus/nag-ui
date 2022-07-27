@@ -25,21 +25,19 @@ class NAGImageSlider extends StatelessWidget {
           ),
         )
         .toList();
-    return Expanded(
-      child: Container(
-        color: NAGColors.nagGrey25,
-        child: CarouselSlider(
-          items: imageSliders,
-          carouselController: _controller,
-          options: CarouselOptions(
-              autoPlay: true,
-              height: height,
-              viewportFraction: 1.0,
-              enlargeCenterPage: false,
-              onPageChanged: (index, reason) {
-                controller.current.value = index;
-              }),
-        ),
+    return Container(
+      color: NAGColors.nagGrey25,
+      child: CarouselSlider(
+        items: imageSliders,
+        carouselController: _controller,
+        options: CarouselOptions(
+            autoPlay: true,
+            height: height,
+            viewportFraction: 1.0,
+            enlargeCenterPage: false,
+            onPageChanged: (index, reason) {
+              controller.current.value = index;
+            }),
       ),
     );
   }
