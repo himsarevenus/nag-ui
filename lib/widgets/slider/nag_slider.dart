@@ -64,7 +64,7 @@ class NAGImageSlider extends StatelessWidget {
                 enlargeCenterPage: true,
                 aspectRatio: 2.0,
                 onPageChanged: (index, reason) {
-                  controller.current = index;
+                  controller.current.value = index;
                 }),
           ),
         ),
@@ -84,7 +84,7 @@ class NAGImageSlider extends StatelessWidget {
                             ? Colors.white
                             : Colors.black)
                         .withOpacity(
-                            controller.current == entry.key ? 0.9 : 0.4)),
+                            controller.current.value == entry.key ? 0.9 : 0.4)),
               ),
             );
           }).toList(),
