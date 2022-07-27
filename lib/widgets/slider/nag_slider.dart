@@ -4,14 +4,16 @@ class NAGImageSlider extends StatelessWidget {
   NAGImageSlider({
     Key? key,
     required this.controller,
+    required this.imgList,
   }) : super(key: key);
 
   final dynamic controller;
   final CarouselController _controller = CarouselController();
+  final List<String> imgList;
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget>? imageSliders = controller.imgList
+    final List<Widget>? imageSliders = imgList
         .map((item) => Container(
               margin: const EdgeInsets.all(5.0),
               child: ClipRRect(
@@ -37,7 +39,7 @@ class NAGImageSlider extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               vertical: 10.0, horizontal: 20.0),
                           child: Text(
-                            'No. ${controller.imgList.indexOf(item)} image',
+                            'No. ${imgList.indexOf(item)} image',
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20.0,
@@ -68,7 +70,7 @@ class NAGImageSlider extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: controller.imgList.asMap().entries.map((entry) {
+          children: imgList.asMap().entries.map((entry) {
             return GestureDetector(
               onTap: () => _controller.animateToPage(entry.key),
               child: Container(
