@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class NAGColors {
+  static const nagPrimary = Color(0Xff007AFF);
+  static const nagGrey25 = Color(0XffD7D8DB);
+
+  //template
   static const transparent = Colors.transparent;
   static const yellow = Color(0XffFFCA1C);
   static const dark = Colors.black;
