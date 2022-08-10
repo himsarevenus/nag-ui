@@ -255,4 +255,7 @@ extension TextStyling on TextStyle {
       copyWith(
         color: condition! ? active : inactive,
       );
+  TextStyle get strikeThrough => copyWith(
+        decoration: TextDecoration.lineThrough,
+      );
 }
