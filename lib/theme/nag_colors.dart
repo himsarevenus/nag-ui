@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
 
 class NAGColors {
-  static const nagPrimary = Color(0Xff007AFF);
+  static const nagPrimary = Color(0Xff00806A);
+  static const nagDanger = Color(0XffD92020);
+  static const nagBlack = Color(0Xff1D1D1F);
+  static const nagGrey75 = Color(0Xff6D6E70);
+  static const nagGrey50 = Color(0XffABAEB2);
   static const nagGrey25 = Color(0XffD7D8DB);
+  static const nagGrey10 = Color(0XffEDEEF0);
+  static const nagWhite = Color(0XffFFFFFF);
+
+  static const nagTagsRed = Color(0XffD92121);
+  static const nagTagsPink = Color(0XffD10857);
+  static const nagTagsPurple = Color(0Xff851BB2);
+  static const nagTagsDPurple = Color(0Xff4D24B2);
+  static const nagTagsIndigo = Color(0Xff3043BF);
+  static const nagTagsBlue = Color(0Xff0B79E5);
+  static const nagTagsCyan = Color(0Xff00B1CC);
+  static const nagTagsTeal = Color(0Xff009987);
+  static const nagTagsGreen = Color(0Xff2E9933);
+  static const nagTagsLGreen = Color(0Xff6BB22D);
+  static const nagTagsLime = Color(0XffB9BF13);
+  static const nagTagsYellow = Color(0XffFFBF1F);
+  static const nagTagsAmber = Color(0XffF27B00);
+  static const nagTagsOrange = Color(0XffE64A19);
 
   //template
   static const transparent = Colors.transparent;

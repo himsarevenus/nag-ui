@@ -24,6 +24,7 @@ class NAGFilterChip extends StatelessWidget {
   final double borderRadius;
   final double horizontalPadding;
   final double verticalPadding;
+  final double horizontalMargin;
 
   final bool outline;
 
@@ -40,6 +41,7 @@ class NAGFilterChip extends StatelessWidget {
     this.selectedTextStyle = NAGMediumText.body2,
     this.borderRadius = 26,
     this.horizontalPadding = NAGSpacing.medium,
+    this.horizontalMargin = 0,
     this.isDisabled = false,
     this.withRemoveIcon = false,
     this.verticalPadding = 8,
@@ -57,6 +59,7 @@ class NAGFilterChip extends StatelessWidget {
     this.selectedTextStyle = NAGMediumText.caption1,
     this.borderRadius = 26,
     this.horizontalPadding = NAGSpacing.medium,
+    this.horizontalMargin = 0,
     this.isDisabled = false,
     this.withRemoveIcon = false,
     this.verticalPadding = 7,
@@ -75,6 +78,9 @@ class NAGFilterChip extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: horizontalPadding,
           vertical: verticalPadding,
+        ),
+        margin: EdgeInsets.symmetric(
+          horizontal: horizontalMargin,
         ),
         decoration: BoxDecoration(
           color: changeToActiveColor
