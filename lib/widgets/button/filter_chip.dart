@@ -27,6 +27,7 @@ class NAGFilterChip extends StatelessWidget {
   final double horizontalMargin;
 
   final bool outline;
+  final Color? outlineColor;
 
   final Color? backgroundColor;
 
@@ -47,6 +48,7 @@ class NAGFilterChip extends StatelessWidget {
     this.verticalPadding = 8,
     this.outline = false,
     this.backgroundColor,
+    this.outlineColor,
   }) : super(key: key);
 
   const NAGFilterChip.small({
@@ -65,6 +67,7 @@ class NAGFilterChip extends StatelessWidget {
     this.verticalPadding = 7,
     this.outline = false,
     this.backgroundColor,
+    this.outlineColor,
     Key? key,
   }) : super(key: key);
 
@@ -89,7 +92,9 @@ class NAGFilterChip extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
           border: Border.all(
               color: outline && !isSelected
-                  ? NAGColors.neutral.shade700
+                  ? outlineColor == null
+                      ? NAGColors.neutral.shade700
+                      : outlineColor!
                   : NAGColors.light,
               width: 1)
           // : null
@@ -98,9 +103,7 @@ class NAGFilterChip extends StatelessWidget {
         child: (icon == null && prefixIcon == null && !withRemoveIcon)
             ? Text(
                 label,
-                style: changeToActiveColor
-                    ? selectedTextStyle.light
-                    : textStyle.neutral70,
+                style: changeToActiveColor ? selectedTextStyle : textStyle,
                 textAlign: TextAlign.center,
               )
             : Wrap(
@@ -112,9 +115,7 @@ class NAGFilterChip extends StatelessWidget {
                   if (prefixIcon != null) const NAGSizedBox.widthSmall(),
                   Text(
                     label,
-                    style: changeToActiveColor
-                        ? selectedTextStyle.light
-                        : textStyle.neutral70,
+                    style: changeToActiveColor ? selectedTextStyle : textStyle,
                   ),
                   if (icon != null || withRemoveIcon)
                     const NAGSizedBox.widthSmall(),
