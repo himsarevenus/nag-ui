@@ -14,6 +14,7 @@ class NAGAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool autoAddLeading;
   final Widget? customTitle;
   final bool withSpacing;
+  final PreferredSizeWidget? bottom,
 
   /// Set icon theme and text style to be white colors
   /// Default will be false
@@ -31,6 +32,7 @@ class NAGAppBar extends StatelessWidget with PreferredSizeWidget {
     this.elevation,
     this.withSpacing = false,
     this.lightTheme = false,
+    this.bottom,
   }) : super(key: key);
 
   @override
@@ -53,6 +55,7 @@ class NAGAppBar extends StatelessWidget with PreferredSizeWidget {
       leading: leading,
       actions: trailing,
       automaticallyImplyLeading: autoAddLeading,
+      bottom: bottom,
     );
   }
 }
