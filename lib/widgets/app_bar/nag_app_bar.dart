@@ -14,7 +14,7 @@ class NAGAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool autoAddLeading;
   final Widget? customTitle;
   final bool withSpacing;
-  final PreferredSizeWidget? bottom,
+  final PreferredSizeWidget? bottom;
 
   /// Set icon theme and text style to be white colors
   /// Default will be false
