@@ -5,16 +5,17 @@ class NAGImageSlider extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.imgList,
+    required this.height,
   }) : super(key: key);
 
   final dynamic controller;
   final CarouselController _controller = CarouselController();
   final List<String> imgList;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height * 0.6;
-    final List<Widget>? imageSliders = imgList
+    final List<Widget> imageSliders = imgList
         .map(
           (item) => Center(
             child: Image.network(
