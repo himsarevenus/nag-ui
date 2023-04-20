@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NAGColors {
-  static const nagPrimary = Color(0Xff00806A);
+  static const nagPrimary = Color(0XffC6E545);
+  static const nagPrimaryDark = Color(0Xff7AA600);
   static const nagDanger = Color(0XffD92020);
   static const nagBlack = Color(0Xff1D1D1F);
   static const nagGrey75 = Color(0Xff6D6E70);
