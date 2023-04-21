@@ -13,8 +13,8 @@ class NAGButton extends StatelessWidget {
   const NAGButton(
     this.label, {
     this.analyticName,
-    this.textColor = NAGColors.light,
-    this.backgroundColor = NAGColors.primaryButton,
+    this.textColor = NAGColors.dark,
+    this.backgroundColor = NAGColors.nagPrimary,
     required this.onPressed,
     this.textStyle = NAGBoldText.body1,
     this.height = 46,
@@ -25,8 +25,8 @@ class NAGButton extends StatelessWidget {
   const NAGButton.medium(
     this.label, {
     this.analyticName,
-    this.textColor = NAGColors.light,
-    this.backgroundColor = NAGColors.primaryButton,
+    this.textColor = NAGColors.dark,
+    this.backgroundColor = NAGColors.nagPrimary,
     required this.onPressed,
     this.textStyle = NAGBoldText.body2,
     this.borderRadius = 4,
@@ -37,8 +37,8 @@ class NAGButton extends StatelessWidget {
   const NAGButton.small2(
     this.label, {
     this.analyticName,
-    this.textColor = NAGColors.light,
-    this.backgroundColor = NAGColors.primaryButton,
+    this.textColor = NAGColors.dark,
+    this.backgroundColor = NAGColors.nagPrimary,
     required this.onPressed,
     this.textStyle = NAGMediumText.caption1,
     this.borderRadius = 4,
