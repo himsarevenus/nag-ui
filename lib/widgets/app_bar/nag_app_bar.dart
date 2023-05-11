@@ -1,6 +1,9 @@
 part of 'index.dart';
 
-class NAGAppBar extends StatelessWidget {
+class NAGAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  final Size preferredSize = const Size.fromHeight(kToolbarHeight);
+
   final String title;
   final Color backgroundColor;
 
@@ -11,6 +14,7 @@ class NAGAppBar extends StatelessWidget {
   final bool autoAddLeading;
   final Widget? customTitle;
   final bool withSpacing;
+  final PreferredSizeWidget? bottom;
 
   /// Set icon theme and text style to be white colors
   /// Default will be false
@@ -28,6 +32,7 @@ class NAGAppBar extends StatelessWidget {
     this.elevation,
     this.withSpacing = false,
     this.lightTheme = false,
+    this.bottom,
   }) : super(key: key);
 
   @override
@@ -50,6 +55,7 @@ class NAGAppBar extends StatelessWidget {
       leading: leading,
       actions: trailing,
       automaticallyImplyLeading: autoAddLeading,
+      bottom: bottom,
     );
   }
 }
@@ -64,6 +70,8 @@ class NAGSliverAppBar extends StatefulWidget {
   final double? expandedHeight;
   final VoidCallback onPressBack;
   final List<Widget>? trailing;
+  final PreferredSizeWidget? bottom;
+  final PreferredSizeWidget? bottomWithLine;
   final bool isBottomHide;
   final bool isTitleWidget;
   final Widget? titleWidget;
@@ -79,16 +87,18 @@ class NAGSliverAppBar extends StatefulWidget {
     this.expandedHeight,
     required this.onPressBack,
     this.trailing,
+    this.bottom,
+    this.bottomWithLine,
     this.isBottomHide = true,
     this.isTitleWidget = false, //must set titleWidget if true
     this.titleWidget,
   }) : super(key: key);
 
   @override
-  _NAGSliverAppBarState createState() => _NAGSliverAppBarState();
+  NAGSliverAppBarState createState() => NAGSliverAppBarState();
 }
 
-class _NAGSliverAppBarState extends State<NAGSliverAppBar> {
+class NAGSliverAppBarState extends State<NAGSliverAppBar> {
   late double expandedHeight;
   bool isCollapsed = false;
 
@@ -154,6 +164,13 @@ class _NAGSliverAppBarState extends State<NAGSliverAppBar> {
                 fontSize: 18,
               ),
             ),
+      bottom: widget.isBottomHide
+          ? isCollapsed
+              ? widget.bottom
+              : null
+          : isCollapsed
+              ? widget.bottomWithLine
+              : widget.bottom,
       actions: widget.trailing,
       elevation: 1,
       flexibleSpace: widget.flexibleSpace,
