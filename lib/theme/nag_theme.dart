@@ -20,7 +20,7 @@ ThemeData getAppTheme(BuildContext _) {
       ),
     ),
     textTheme: TextTheme(
-      bodyText2: NAGRegularText.body2.neutral70,
+      bodyMedium: NAGRegularText.body2.neutral70,
     ),
     dividerTheme: DividerThemeData(
       color: NAGColors.neutral.shade200,

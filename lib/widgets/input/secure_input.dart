@@ -52,10 +52,10 @@ class NAGSecureTextInput extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _NAGSecureTextInputState createState() => _NAGSecureTextInputState();
+  NAGSecureTextInputState createState() => NAGSecureTextInputState();
 }
 
-class _NAGSecureTextInputState extends State<NAGSecureTextInput> {
+class NAGSecureTextInputState extends State<NAGSecureTextInput> {
   bool isSecure = true;
 
   @override

@@ -15,10 +15,6 @@ class ChipButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        child: Text(
-          text,
-          style: NAGBoldText.caption1.purple50,
-        ),
         padding: const EdgeInsets.symmetric(
           horizontal: NAGSpacing.main,
           vertical: NAGSpacing.small,
@@ -26,6 +22,10 @@ class ChipButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: NAGColors.primary.shade100,
           borderRadius: BorderRadius.circular(12),
+        ),
+        child: Text(
+          text,
+          style: NAGBoldText.caption1.purple50,
         ),
       ),
     );

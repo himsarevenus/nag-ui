@@ -10,6 +10,5 @@ export 'loading/index.dart';
 export 'tab/index.dart';
 export 'spacer/index.dart';
 export 'empty/index.dart';
-export 'slider/index.dart';
 
 part 'widget_extension.dart';
