@@ -1,6 +1,6 @@
 part of 'index.dart';
 
-class NAGAppBar extends StatelessWidget with PreferredSizeWidget {
+class NAGAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize = const Size.fromHeight(kToolbarHeight);
 
@@ -95,10 +95,10 @@ class NAGSliverAppBar extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _NAGSliverAppBarState createState() => _NAGSliverAppBarState();
+  NAGSliverAppBarState createState() => NAGSliverAppBarState();
 }
 
-class _NAGSliverAppBarState extends State<NAGSliverAppBar> {
+class NAGSliverAppBarState extends State<NAGSliverAppBar> {
   late double expandedHeight;
   bool isCollapsed = false;
 
